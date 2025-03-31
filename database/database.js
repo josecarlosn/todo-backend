@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize"; 
-const sequelize = new Sequelize('todoDB', 'postgres','15951',{
-    port: 5000,
+const sequelize = new Sequelize('TODODB', 'postgres','159487',{
+    port: 5432,
     dialect: 'postgres',
     host: 'localhost'
 })

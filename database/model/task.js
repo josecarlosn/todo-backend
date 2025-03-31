@@ -20,13 +20,17 @@ const task = sequelize.define('task', {
         defaultValue: false,
         allowNull: false
     },
-    date_of_creation: {
+    creation_date: {
         type: DataTypes.DATE,
         allowNull: false,
         defaultValue: DataTypes.NOW
     }
 }, {
+    tableName: 'task',
     timestamps: false  // Desabilita as colunas createdAt e updatedAt
 });
+task.sync()
+  .then(() => console.log('****Sincronizado****')) 
+  .catch((error) => console.error('Erro ao sincronizar:', error));
 
 export default task;
